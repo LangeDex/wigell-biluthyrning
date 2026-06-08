@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wigell Biluthyrning</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <header style="position: relative">
+      <nav class="navbar">
+        <div class="navbar__logo">
+          <img
+            src="images/KoncernLogga.png"
+            alt="Wigell Biluthyrning logotyp"
+            height="40"
+          />
+          <span>Wigell Biluthyrning</span>
+        </div>
+
+        <ul class="navbar__links">
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="cars.html">Bilar</a></li>
+          <li id="my-bookings-link" style="display: none">
+            <a href="my-bookings.html">Mina bokningar</a>
+          </li>
+          <li id="admin-link" style="display: none">
+            <a href="admin.html">Admin</a>
+          </li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div class="navbar__user">
+          <button
+            id="login-btn"
+            onclick="openLoginModal()"
+            aria-label="Logga in"
+          >
+            <i class="bi bi-person-circle"></i>
+          </button>
+
+          <div id="user-menu" style="display: none">
+            <button class="user-avatar" onclick="toggleUserDropdown()">
+              <span id="avatar-letter"></span>
+            </button>
+            <div class="user-dropdown" id="user-dropdown" style="display: none">
+              <p id="dropdown-username"></p>
+              <a href="my-bookings.html"
+                ><i class="bi bi-calendar-check"></i> Mina bokningar</a
+              >
+              <a href="#footer"><i class="bi bi-telephone"></i> Kontakt</a>
+              <button onclick="logout()">
+                <i class="bi bi-box-arrow-right"></i> Logga ut
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero__content">
+        <h1>Hyr din nästa bil</h1>
+        <p>Enkelt, tryggt och till bra pris. Vi har bilar för alla behov.</p>
+      </div>
+    </section>
+
+    <main>
+      <!-- Sektion 1: Bild vänster, text höger -->
+      <section class="about-section">
+        <div class="about-block">
+          <div class="about-block__image">
+            <img src="images/about.jpg" alt="Om Wigell Biluthyrning" />
+          </div>
+          <div class="about-block__text">
+            <h2>Om oss</h2>
+            <p>
+              Wigell Biluthyrning har sedan starten erbjudit prisvärda och
+              pålitliga biluthyrningstjänster. Vi värnar om våra kunders
+              trygghet och komfort.
+            </p>
+            <p>
+              Med ett brett sortiment av bilar hittar du alltid rätt bil för
+              just ditt behov – oavsett om det är en weekendresa eller en längre
+              tjänsteresa.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sektion 2: Text vänster, bild höger -->
+      <section class="about-section about-section--alt">
+        <div class="about-block">
+          <div class="about-block__text">
+            <h2>Enkel bokning</h2>
+            <p>
+              Boka din bil snabbt och enkelt direkt på vår hemsida. Välj datum,
+              välj bil och bekräfta – det tar bara några minuter.
+            </p>
+            <p>
+              Vi erbjuder flexibla hyresperioder och konkurrenskraftiga priser
+              för alla typer av resor.
+            </p>
+            <a href="cars.html" class="btn btn--positive">Se vårt sortiment</a>
+          </div>
+          <div class="about-block__image">
+            <img src="images/booking.jpg" alt="Enkel bokning" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Sektion 3: Testkör -->
+      <section class="about-section">
+        <div class="about-block">
+          <div class="about-block__image">
+            <img src="images/testdrive.jpg" alt="Testkör en bil" />
+          </div>
+          <div class="about-block__text">
+            <h2>Testkör en bil</h2>
+            <p>
+              Osäker på vilken bil som passar dig? Boka en testdag och upplev
+              bilen innan du bestämmer dig.
+            </p>
+            <p>
+              Vi erbjuder testkörningstillfällen för alla bilar i vårt sortiment
+              – helt utan krångel.
+            </p>
+            <a href="cars.html" class="btn btn--positive">Boka en testdag</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sektion 4: Kundservice -->
+      <section class="about-section about-section--alt">
+        <div class="about-block">
+          <div class="about-block__text">
+            <h2>Vi finns här för dig</h2>
+            <p>
+              Vår kundservice finns tillgänglig för att hjälpa dig med allt från
+              bokningar till frågor om våra bilar.
+            </p>
+            <p>
+              Vi strävar alltid efter att ge dig den bästa upplevelsen – före,
+              under och efter din hyresperiod.
+            </p>
+          </div>
+          <div class="about-block__image">
+            <img src="images/service.jpg" alt="Kundservice" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Sektion 5: Hållbarhet -->
+      <section class="about-section">
+        <div class="about-block">
+          <div class="about-block__image">
+            <img src="images/environment.jpg" alt="Hållbarhet" />
+          </div>
+          <div class="about-block__text">
+            <h2>Vi tänker på miljön</h2>
+            <p>
+              Wigell Biluthyrning erbjuder ett växande utbud av elbilar och
+              hybrider för dig som vill resa mer hållbart.
+            </p>
+            <p>
+              Tillsammans kan vi minska vårt klimatavtryck – välj en elbil vid
+              ditt nästa hyrtillfälle!
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- login modal -->
+    <div id="login-modal" style="display: none">
+      <div class="modal-overlay" onclick="closeLoginModal()"></div>
+      <div class="modal-card">
+        <h2>Logga in</h2>
+
+        <div id="modal-error" style="display: none">
+          Fel användarnamn eller lösenord.
+        </div>
+
+        <div class="form-group">
+          <label for="username">Användarnamn</label>
+          <input type="text" id="username" placeholder="Ange användarnamn" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Lösenord</label>
+          <input type="password" id="password" placeholder="Ange lösenord" />
+        </div>
+
+        <button class="btn btn--positive btn--full" onclick="handleLogin()">
+          Logga in
+        </button>
+      </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+      function openLoginModal() {
+        document.getElementById("login-modal").style.display = "block";
+      }
+
+      function closeLoginModal() {
+        document.getElementById("login-modal").style.display = "none";
+      }
+
+      async function handleLogin() {
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const errorMsg = document.getElementById("modal-error");
+
+        const result = await login(username, password);
+
+        if (result.success) {
+          closeLoginModal();
+          updateNavbar();
+        } else {
+          errorMsg.style.display = "block";
+        }
+      }
+
+      function updateNavbar() {
+        const credentials = sessionStorage.getItem("credentials");
+        const loginBtn = document.getElementById("login-btn");
+        const userMenu = document.getElementById("user-menu");
+        const avatarLetter = document.getElementById("avatar-letter");
+        const dropdownUsername = document.getElementById("dropdown-username");
+        const adminLink = document.getElementById("admin-link");
+        const myBookingsLink = document.getElementById("my-bookings-link");
+
+        if (credentials) {
+          const username = sessionStorage.getItem("username");
+          loginBtn.style.display = "none";
+          userMenu.style.display = "block";
+          avatarLetter.textContent = username.charAt(0).toUpperCase();
+          dropdownUsername.textContent = username;
+
+          if (myBookingsLink) myBookingsLink.style.display = "inline";
+          if (isAdmin() && adminLink) adminLink.style.display = "inline";
+        }
+      }
+
+      function toggleUserDropdown() {
+        const dropdown = document.getElementById("user-dropdown");
+        dropdown.style.display =
+          dropdown.style.display === "none" ? "block" : "none";
+      }
+      //bookning
+      function bookCar(carId) {
+        if (!sessionStorage.getItem("credentials")) {
+          openLoginModal();
+        } else {
+          window.location.href = `booking.html?carId=${carId}`;
+        }
+      }
+
+      function toggleMenu() {
+        document.querySelector(".navbar__links").classList.toggle("open");
+      }
+
+      updateNavbar();
+    </script>
+
+    <footer class="footer" id="footer">
+      <div class="footer__content">
+        <div class="footer__company">
+          <img
+            src="images/KoncernLogga.png"
+            alt="Wigell Biluthyrning"
+            height="50"
+          />
+          <span>Wigell Biluthyrning</span>
+        </div>
+
+        <div class="footer__info">
+          <h3>Sundsvall</h3>
+          <p>Storgatan 1</p>
+          <p>852 30 Sundsvall</p>
+          <p>info@wigell.se</p>
+          <p>060-123 45 67</p>
+        </div>
+
+        <div class="footer__links">
+          <h3>Snabblänkar</h3>
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="cars.html">Sortiment</a></li>
+            <li><a href="my-bookings.html">Mina bokningar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__social">
+          <h3>Följ oss</h3>
+          <p><i class="bi bi-facebook"></i> Facebook</p>
+          <p><i class="bi bi-instagram"></i> Instagram</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2025 Wigell Biluthyrning. Alla rättigheter förbehållna.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,747 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+:root {
+  --color-primary:    #1a1a2e;
+  --color-secondary:  #16213e;
+  --color-accent:     #e94560;
+  --color-bg:         #f5f5f5;
+  --color-white:      #ffffff;
+  --color-text:       #1a1a2e;
+  --color-text-light: #666666;
+  --color-border:     #dddddd;
+
+  --btn-positive:      #1e8449;
+  --btn-positive-hover:#196f3d;
+  --btn-negative:      #e74c3c;
+  --btn-negative-hover:#c0392b;
+  --btn-neutral:       #3498db;
+  --btn-neutral-hover: #2980b9;
+
+  --btn-function:      #95a5a6;
+  --btn-function-hover:#7f8c8d;
+
+  --font-heading: 'Georgia', serif;
+  --font-body:    'Trebuchet MS', sans-serif;
+
+  --radius: 8px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+/* --- Knappar --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  text-decoration: none;
+}
+
+.filter-group .btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  justify-content: center;
+  background: var(--btn-function);
+  color: var(--color-white);
+}
+
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn--positive  { background: var(--btn-positive); color: #fff; }
+.btn--positive:hover { background: var(--btn-positive-hover); }
+
+.btn--negative  { background: var(--btn-negative); color: #fff; }
+.btn--negative:hover { background: var(--btn-negative-hover); }
+
+.btn--neutral   { background: var(--btn-neutral); color: #fff; }
+.btn--neutral:hover { background: var(--btn-neutral-hover); }
+
+.btn--function  { background: var(--btn-function); color: #fff; }
+.btn--function:hover { background: var(--btn-function-hover); }
+
+.btn--full { width: 100%; justify-content: center; }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 80px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  position: relative;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.navbar__logo img {
+  height: 40px;
+  filter: invert(1);
+}
+
+.navbar__links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar__links a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.navbar__links a:hover {
+  opacity: 1;
+}
+
+.navbar__user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.navbar__user button {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* Modal */
+#login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-card {
+  position: absolute;
+  top: 64px;
+  right: 1rem;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  width: 320px;
+  box-shadow: var(--shadow);
+  z-index: 1001;
+}
+
+.modal-card h2 {
+  margin-bottom: 1.5rem;
+}
+
+.modal-card .form-group {
+  margin-bottom: 1rem;
+}
+
+.modal-card label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.modal-card input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.modal-card .btn {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* --- Bilar --- */
+.cars-section {
+  padding: 2rem;
+  flex: 1;
+}
+
+#cars-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.car-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.car-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.car-card__info {
+  padding: 1rem;
+}
+
+.car-card__info h3 {
+  margin-bottom: 0.4rem;
+}
+
+.car-card__info p {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.car-card__info .btn {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* --- Hero --- */
+.hero {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.hero__content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero__content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* --- About sektioner --- */
+.about-section {
+  padding: 4rem 2rem;
+  background: var(--color-white);
+}
+
+.about-section--alt {
+  background: var(--color-bg);
+}
+
+.about-block {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-block__image {
+  flex: 1;
+}
+
+.about-block__image img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.about-block__text {
+  flex: 1;
+}
+
+.about-block__text h2 {
+  margin-bottom: 1rem;
+}
+
+.about-block__text p {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.about-block__text .btn {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.about-block__image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* --- Footer --- */
+.footer {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 3rem 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer__content {
+  display: flex;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer__company {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+}
+
+.footer__company img {
+  filter: invert(1);
+}
+
+.footer__info h3,
+.footer__links h3,
+.footer__social h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.footer__info p,
+.footer__social p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.3rem;
+}
+
+.footer__links ul {
+  list-style: none;
+}
+
+.footer__links ul li {
+  margin-bottom: 0.3rem;
+}
+
+.footer__links a {
+  color: var(--color-white);
+  text-decoration: none;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.footer__links a:hover {
+  opacity: 1;
+}
+
+.footer__bottom {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+/* --- User avatar dropdown --- */
+.user-avatar {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  color: var(--color-white) !important;
+  font-weight: bold !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  border: 2px solid var(--color-white) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 8px !important;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 64px;
+  right: 1rem;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  min-width: 200px;
+  z-index: 999;
+}
+
+.user-dropdown p {
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.user-dropdown a,
+.user-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0;
+  color: var(--color-text);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.user-dropdown a:hover,
+.user-dropdown button:hover {
+  color: var(--color-accent);
+}
+
+/* --- Cars layout med sidebar --- */
+.cars-layout {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.filter-sidebar {
+  width: 220px;
+  min-width: 220px;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  height: fit-content;
+}
+
+.filter-sidebar h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group h4 {
+  margin-bottom: 0.8rem;
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.filter-group .btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  justify-content: center;
+}
+
+/* --- Admin --- */
+.admin-section {
+  padding: 2rem;
+}
+
+.admin-block {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.admin-block h3 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+thead th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+thead th:hover {
+  opacity: 0.85;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--color-border);
+}
+
+tbody tr:hover {
+  background: var(--color-bg);
+}
+
+tbody td {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* --- Mina bokningar --- */
+.bookings-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.booking-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.booking-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.booking-card__info p {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+/* --- Bokningssida --- */
+.booking-section {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.car-summary {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.car-summary h3 {
+  margin-bottom: 0.5rem;
+}
+
+.car-summary p {
+  color: var(--color-text-light);
+}
+
+#booking-form {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+#booking-form .form-group {
+  margin-bottom: 1rem;
+}
+
+#booking-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#booking-form input[type="date"] {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+}
+
+#booking-form .btn {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* --- Responsiv design --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .navbar__links {
+    display: none;
+    position: fixed !important;
+    top: 80px;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    transform: none !important;
+    background: var(--color-primary);
+    flex-direction: column;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    z-index: 999;
+  }
+
+  .navbar__links.open {
+    display: flex;
+  }
+
+  .navbar__links.open li {
+    display: block !important;
+  }
+
+  .navbar__links.open li a {
+    color: var(--color-white) !important;
+    opacity: 1 !important;
+  }
+
+  .navbar__user {
+    position: absolute;
+    right: 3.5rem;
+    top: 0.2rem;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .about-block {
+    flex-direction: column;
+  }
+
+  .about-block__image img {
+    height: 200px;
+  }
+
+  .cars-layout {
+    flex-direction: column;
+  }
+
+  .filter-sidebar {
+    width: 100%;
+  }
+
+  #cars-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .footer__content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .booking-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* --- Admin lägg till bil --- */
+.admin-add-car {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.admin-add-car h4 {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.admin-add-car input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 120px;
+}
