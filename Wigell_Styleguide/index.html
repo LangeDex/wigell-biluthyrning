@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wigell Styleguide</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+
+        <div class="sidebar__brand">
+            <span class="sidebar__logo">W</span>
+            <span class="sidebar__name">Wigell <br> <small>Styleguide</small></span>
+        </div>
+
+        <button class="sidebar__toggle" id="sidebarToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="sidebar__nav" id="sidebarNav">
+
+            <li class="sidebar__label">Grundelement</li>
+            <li><a href="#farger" class="sidebar__link">🎨 Färgschema</a></li>
+            <li><a href="#typografi" class="sidebar__link">🔤 Typografi</a></li>
+
+            <li class="sidebar__label">Komponenter</li>
+            <li><a href="#knappar" class="sidebar__link">🔘 Knappar</a></li>
+            <li><a href="#tabeller" class="sidebar__link">📋 Tabeller</a></li>
+            <li><a href="#meddelanden" class="sidebar__link">💬 Meddelanden</a></li>
+            <li><a href="#laddning" class="sidebar__link">⏳ Laddning</a></li>
+            <li><a href="#paneler" class="sidebar__link">🗂️ Paneler</a></li>
+            <li><a href="#formular" class="sidebar__link">📝 Formulär</a></li>
+
+        </ul>
+
+    </nav>
+
+    <nav class="top-nav"> 
+        <ul class="top-nav__links">
+            <li><a href="#">Start</a></li>
+            <li><a href="#">Om oss</a></li>
+            <li class="top-nav__dropdown">
+                <a href="#">Tjänster ▾</a>
+                <ul class="top-nav__submenu">
+                    <li><a href="#">Översikt</a></li>
+                    <li><a href="#">Priser</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        
+        <header class="guide-header">
+            <h1>Wigell Styleguide</h1>
+            <p>I denna styleguide finns det vissa exempel på hur en hemsida kan göras, med kodexempel och liknande.</p>        </header>
+
+            <!-- Färgschema -->
+        <section id="farger" class="guide-section">
+            <h2>Färgschema</h2>
+            <p>På färgschemat kan vi se vilka färger och deras färg koder som vi använder under skapandet av denna hemsida, står även vad dem används till.</p>
+
+            <div class="color-grid">
+
+                <div class="color-swatch" style="--swatch: #1B3A6B;">
+                    <div class="color-swatch__preview"></div>
+                    <div class="color-swatch__info">
+                        <strong>Primär</strong>
+                        <span>#1B3A6B</span>
+                    </div>
+                </div>
+
+                <div class="color-swatch" style="--swatch: #C0392B;">
+                    <div class="color-swatch__preview"></div>
+                    <div class="color-swatch__info">
+                        <strong>Accent</strong>
+                        <span>#C0392B</span>
+                    </div>
+                </div>
+
+                <div class="color-swatch" style="--swatch: #F4F5F7;">
+                    <div class="color-swatch__preview"></div>
+                    <div class="color-swatch__info">
+                        <strong>Bakgrund</strong>
+                        <span>#F4F5F7</span>
+                    </div>
+                </div>
+
+                <div class="color-swatch" style="--swatch: #FFFFFF;">
+                    <div class="color-swatch__preview"></div>
+                    <div class="color-swatch__info">
+                        <strong>Yta</strong>
+                        <span>#FFFFFF</span>
+                    </div>
+                </div>
+
+                <div class="color-swatch" style="--swatch: #1A1A1A;">
+                    <div class="color-swatch__preview"></div>
+                    <div class="color-swatch__info">
+                        <strong>Text</strong>
+                        <span>#1A1A1A</span>
+                    </div>
+                </div>
+
+                <div class="color-swatch" style="--swatch: #6B7280;">
+                    <div class="color-swatch__preview"></div>
+                    <div class="color-swatch__info">
+                        <strong>Dämpad text</strong>
+                        <span>#6B7280</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="code-block">
+                <div class="code-block__header">
+                    <span>CSS — Färgvariabler</span>
+                </div>
+<pre><code>:root {
+    --color-primary:    #1B3A6B;
+    --color-accent:     #C0392B;
+    --color-bg:         #F4F5F7;
+    --color-surface:    #FFFFFF;
+    --color-text:       #1A1A1A;
+    --color-text-muted: #6B7280;
+    --color-border:     #E2E4E8;
+}</code></pre>
+            </div>
+
+        </section>
+
+        <!-- Typografi -->
+        <section id="typografi" class="guide-section">
+            <h2>Typografi</h2>
+            <p>Vi använder Syne för rubriker och Source Sans 3 för brödtexten.</p>
+
+            <div class="type-showcase">
+
+                <div class="type-item">
+                    <h1>Välkommen till Wigell</h1>
+                    <span class="type-meta">Syne 700 · 2.5rem</span>
+                </div>
+
+                <div class="type-item">
+                    <h2>Om koncernen</h2>
+                    <span class="type-meta">Syne 700 · 2rem</span>
+                </div>
+
+                <div class="type-item">
+                    <h3>Våra tjänster</h3>
+                    <span class="type-meta">Syne 600 · 1.5rem</span>
+                </div>
+
+                <div class="type-item">
+                    <h4>Kontakt och support</h4>
+                    <span class="type-meta">Syne 600 · 1.2rem</span>
+                </div>
+
+                <div class="type-item">
+                    <p>Brödtext används för löpande innehåll på sidan. Håll meningar korta och tydliga så att användaren enkelt kan ta till sig informationen.</p>
+                    <span class="type-meta">Source Sans 3 · 1rem · line-height 1.7</span>
+                </div>
+
+            </div>
+
+            <div class="code-block">
+                <div class="code-block__header">
+                    <span>HTML — Typografi</span>
+                </div>
+<pre><code>&lt;h1&gt;Rubrik H1&lt;/h1&gt;
+&lt;h2&gt;Rubrik H2&lt;/h2&gt;
+&lt;h3&gt;Rubrik H3&lt;/h3&gt;
+&lt;h4&gt;Rubrik H4&lt;/h4&gt;
+&lt;p&gt;Brödtext&lt;/p&gt;</code></pre>
+            </div>
+
+        </section>
+
+        <!-- Knappar -->
+        <section id="knappar" class="guide-section">
+            <h2>Knappar</h2>
+            <p>Här har vi exemplar på hur knappar kan se ut, och vad färger och liknande kan påverka deras förtydelse.</p>
+
+            <div class="btn-showcase">
+
+                <div class="btn-item">
+                    <button class="btn btn--standard">Standardknapp</button>
+                    <span class="btn-label">Standard — används för olika saker</span>
+                </div>
+
+                <div class="btn-item">
+                    <button class="btn btn--function">🖨️ Skriv ut</button>
+                    <span class="btn-label">Funktion — för verktyg som skriv ut, exportera</span>
+                </div>
+
+                <div class="btn-item">
+                    <button class="btn btn--positive">✓ Spara</button>
+                    <span class="btn-label">Positiv — för skapa, spara, bekräfta, OK</span>
+                </div>
+
+                <div class="btn-item">
+                    <button class="btn btn--negative">✕ Ta bort</button>
+                    <span class="btn-label">Negativ — för avbryt, stäng, radera</span>
+                </div>
+
+            </div>
+
+            <div class="code-block">
+                <div class="code-block__header">
+                    <span>HTML — Knappar</span>
+                </div>
+<pre><code>&lt;button class="btn btn--standard"&gt;Standardknapp&lt;/button&gt;
+&lt;button class="btn btn--function"&gt;🖨️ Skriv ut&lt;/button&gt;
+&lt;button class="btn btn--positive"&gt;✓ Spara&lt;/button&gt;
+&lt;button class="btn btn--negative"&gt;✕ Ta bort&lt;/button&gt;</code></pre>
+            </div>
+
+        </section>
+
+        <section id="tabeller" class="guide-section">
+            <h2>Tabeller</h2>
+            <p>Här har vi två exempel på listor en är för användare och den andra är för data.</p>
+
+            <h3>Lista-tabell</h3>
+            <p>För längre listor med få kolumner, t.ex. en användarlista.</p>
+
+            <div class="table-wrapper">
+                <table class="table table--list">
+                    <thead>
+                        <tr>
+                            <th>Namn</th>
+                            <th>Roll</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bergitta Svensson</td>
+                            <td>Administratör</td>
+                            <td>Aktiv</td>
+                        </tr>
+                        <tr>
+                            <td>Erik Lundgren</td>
+                            <td>Användare</td>
+                            <td>Aktiv</td>
+                        </tr>
+                        <tr>
+                            <td>Jessica Olson</td>
+                            <td>Användare</td>
+                            <td>Inaktiv</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Data-tabell</h3>
+            <p>För tät data med många kolumner, t.ex. bokningar eller statistik.</p>
+
+            <div class="table-wrapper">
+                <table class="table table--data">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Datum</th>
+                            <th>Typ</th>
+                            <th>Användare</th>
+                            <th>Belopp</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1042</td>
+                            <td>2025-05-10</td>
+                            <td>Faktura</td>
+                            <td>Bergitta Svensson</td>
+                            <td>320 kr</td>
+                            <td>Betald</td>
+                        </tr>
+                        <tr>
+                            <td>#1043</td>
+                            <td>2025-05-11</td>
+                            <td>Order</td>
+                            <td>Erik Lundgren</td>
+                            <td>160 kr</td>
+                            <td>Väntande</td>
+                        </tr>
+                        <tr>
+                            <td>#1044</td>
+                            <td>2025-05-12</td>
+                            <td>Faktura</td>
+                            <td>Jessica Olson</td>
+                            <td>480 kr</td>
+                            <td>Obetald</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="code-block">
+                <div class="code-block__header">
+                    <span>HTML — Tabell</span>
+                </div>
+<pre><code>&lt;table class="table table--list"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Kolumn&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+        </section>
+
+        <section id="meddelanden" class="guide-section">
+            <h2>Meddelanden</h2>
+            <p>Meddelanden visar för användaren vad som har hänt symboler är extra bra för om personen har nedsatt syn på något sätt.</p>
+
+            <div class="alerts-showcase">
+
+                <div class="alert alert--success">
+                    <strong>✓ Sparat!</strong> Dina ändringar har sparats.
+                </div>
+
+                <div class="alert alert--info">
+                    <strong>ℹ Info:</strong> Kommande nyheter till sidan eller generell information.
+                </div>
+
+                <div class="alert alert--warning">
+                    <strong>⚠ Varning:</strong> Du har osparade ändringar.
+                </div>
+
+                <div class="alert alert--error">
+                    <strong>✕ Fel:</strong> Något gick fel. Försök igen eller kontakta support.
+                </div>
+
+            </div>
+
+            <div class="code-block">
+                <div class="code-block__header">
+                    <span>HTML — Meddelanden</span>
+                </div>
+<pre><code>&lt;div class="alert alert--success"&gt;✓ Sparat!&lt;/div&gt;
+&lt;div class="alert alert--info"&gt;ℹ Information&lt;/div&gt;
+&lt;div class="alert alert--warning"&gt;⚠ Varning&lt;/div&gt;
+&lt;div class="alert alert--error"&gt;✕ Fel&lt;/div&gt;</code></pre>
+            </div>
+
+        </section>
+
+        <section id="laddning" class="guide-section">
+            <h2>Laddningsindikator</h2>
+            <p>Visa laddningsindikatorer när systemet arbetar och användaren behöver vänta.</p>
+
+            <div class="loaders-showcase">
+
+                <div class="loader-item">
+                    <div class="spinner"></div>
+                    <span>Spinner — för generell laddning</span>
+                </div>
+
+                <div class="loader-item">
+                    <div class="progress-bar">
+                        <div class="progress-bar__fill" style="width: 65%;"></div>
+                    </div>
+                    <span>Progressbar — när procent är känd (65%)</span>
+                </div>
+
+                <div class="loader-item">
+                    <div class="skeleton"></div>
+                    <span>Skeleton — platshållare medan innehåll laddas</span>
+                </div>
+
+            </div>
+
+            <div class="code-block">
+                <div class="code-block__header">
+                    <span>HTML — Laddning</span>
+                </div>
+<pre><code>&lt;div class="spinner"&gt;&lt;/div&gt;
+
+&lt;div class="progress-bar"&gt;
+    &lt;div class="progress-bar__fill" style="width: 65%;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="skeleton"&gt;&lt;/div&gt;</code></pre>
+            </div>
+
+        </section>
+
+        <section id="paneler" class="guide-section">
+            <h2>Paneler</h2>
+            <p>Paneler grupperar relaterat innehåll och ger visuell feedback om status.</p>
+
+            <div class="panels-showcase">
+
+                <div class="panel panel--positive">
+                    <h4>✓ Positiv panel</h4>
+                    <p>Används för att bekräfta en lyckad åtgärd eller visa positiv 
+                    information, t.ex. att en ansökan är godkänd.</p>
+                </div>
+
+                <div class="panel panel--neutral">
+                    <h4>ℹ Neutral panel</h4>
+                    <p>Används för allmän information utan specifik status, 
+                    t.ex. en instruktionsruta för användaren.</p>
+                </div>
+
+                <div class="panel panel--negative">
+                    <h4>✕ Negativ panel</h4>
+                    <p>Används för att varna om problem eller visa negativ status, 
+                    t.ex. att en betalning misslyckades.</p>
+                </div>
+
+            </div>
+
+            <div class="code-block">
+                <div class="code-block__header">
+                    <span>HTML — Paneler</span>
+                </div>
+<pre><code>&lt;div class="panel panel--positive"&gt;
+    &lt;h4&gt;Positiv panel&lt;/h4&gt;
+    &lt;p&gt;Innehåll...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="panel panel--neutral"&gt;
+    &lt;h4&gt;Neutral panel&lt;/h4&gt;
+    &lt;p&gt;Innehåll...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="panel panel--negative"&gt;
+    &lt;h4&gt;Negativ panel&lt;/h4&gt;
+    &lt;p&gt;Innehåll...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+        </section>
+
+        <section id="formular" class="guide-section">
+            <h2>Formulär</h2>
+            <p>Ett enkelt formulär som även visar en typ av felhantering.</p>
+
+            <form class="form-showcase" onsubmit="return false;">
+
+                <div class="form-group">
+                    <label class="form-label" for="namn">Namn</label>
+                    <input class="form-input" type="text" id="namn" placeholder="Ange ditt namn" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="epost">E-postadress</label>
+                    <input class="form-input form-input--error" type="email" id="epost" value="felaktig-epost" />
+                    <span class="form-error">Ange en giltig e-postadress.</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="meddelande">Meddelande</label>
+                    <textarea class="form-input form-textarea" id="meddelande" placeholder="Skriv ditt meddelande här..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Avdelning (enval)</label>
+                    <div class="form-options">
+                        <label class="form-option">
+                            <input type="radio" name="avdelning" checked /> Ekonomi
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="avdelning" /> IT
+                        </label>
+                        <label class="form-option">
+                            <input type="radio" name="avdelning" /> Säljare
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Intressen (flerval)</label>
+                    <div class="form-options">
+                        <label class="form-option">
+                            <input type="checkbox" checked /> Nyheter
+                        </label>
+                        <label class="form-option">
+                            <input type="checkbox" /> Erbjudanden
+                        </label>
+                        <label class="form-option">
+                            <input type="checkbox" /> Events
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn btn--positive" type="submit">✓ Skicka</button>
+                    <button class="btn btn--negative" type="reset">✕ Avbryt</button>
+                </div>
+
+            </form>
+
+            <div class="code-block">
+                <div class="code-block__header">
+                    <span>HTML — Formulär</span>
+                </div>
+<pre><code>&lt;form&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="form-label" for="namn"&gt;Namn&lt;/label&gt;
+        &lt;input class="form-input" type="text" id="namn" /&gt;
+    &lt;/div&gt;
+
+    &lt;label class="form-option"&gt;
+        &lt;input type="radio" name="val" /&gt; Alternativ
+    &lt;/label&gt;
+
+    &lt;label class="form-option"&gt;
+        &lt;input type="checkbox" /&gt; Alternativ
+    &lt;/label&gt;
+
+    &lt;button class="btn btn--positive"&gt;✓ Skicka&lt;/button&gt;
+    &lt;button class="btn btn--negative"&gt;✕ Avbryt&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

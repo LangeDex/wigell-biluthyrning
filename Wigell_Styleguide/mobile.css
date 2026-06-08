@@ -1,0 +1,128 @@
+@media (max-width: 1024px) {
+
+    :root {
+        --sidebar-width: 220px;
+    }
+
+    .main-content {
+        padding: 2rem;
+    }
+
+    .panels-showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: sticky;
+        top: 0;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .sidebar__brand {
+        flex: 1;
+        border-bottom: none;
+        padding: 0.75rem 1rem;
+    }
+
+    .sidebar__toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.75rem 1rem;
+    }
+
+    .sidebar__toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #fff;
+        border-radius: 2px;
+    }
+
+    .sidebar__nav {
+        width: 100%;
+        display: none;
+        border-top: 1px solid rgba(255,255,255,0.12);
+        padding: 0.5rem 0 1rem;
+    }
+
+    .sidebar__nav.is-open {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 1.25rem;
+        max-width: 100%;
+    }
+
+    .top-nav {
+        display: none;
+    }
+
+    .guide-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .guide-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .btn-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .color-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .loader-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .progress-bar,
+    .skeleton {
+        width: 100%;
+    }
+
+    .form-showcase {
+        padding: 1.25rem;
+        max-width: 100%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .table-wrapper {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .color-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-header h1 {
+        font-size: 1.5rem;
+    }
+}
